@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div id="header-text" class="text">Login</div>
+            <div class="underline"></div>
+        </div>
+
+        <!-- Flash messages block -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div id="alerts">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show"
+                role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form class="inputs" action="/login" method="POST">
+            <div class="input">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" placeholder="Email" id="email" name="email" />
+            </div>
+            <div class="input">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" placeholder="Enter password" id="password" name="password" />
+                <i id="toggle-password" class="fas fa-eye eye icon" onclick="openeye()"></i>
+            </div>
+          <!-- <div id="forgot-password" class="forgot-password">
+                Forgot password? <span style="color:rgb(255, 26, 5);">Click Here</span>
+            </div>--> 
+            <div class="submit-container">
+                <button type="submit" id="login" class="submit">Submit</button>
+                <p style="color:rgb(12, 11, 11);font-size:20px;margin:auto">OR</p>
+                <p>Don't Have an Account <a id="sign-up" href="/signUp" class=""> Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+<script>
+    const togglePasswordButton = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    if (togglePasswordButton && passwordInput) {
+        togglePasswordButton.addEventListener('click', () => {
+            if (passwordInput.value.length > 0) {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePasswordButton.className = 'fas fa-eye-slash';
+                } else {
+                    passwordInput.type = 'password';
+                    togglePasswordButton.className = 'fas fa-eye';
+                }
+            } else {
+                alert("Please enter a password.");
+            }
+        });
+    }
+
+
+
+
+    const forgotPasswordLink = document.getElementById('forgot-password');
+    if (forgotPasswordLink) {
+        forgotPasswordLink.addEventListener('click', () => {
+            alert('Forgot password functionality will be implemented later.');
+        });
+    }
+
+
+
+
+</script>
+
+</html>

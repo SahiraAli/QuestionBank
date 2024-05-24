@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question paper generation</title>
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="../static/final.css"> -->
+    <style>
+        body {
+            background-image: url(../static/background2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .form-box {
+            border: 2px red solid;
+            background-color: white;
+            padding: 2rem;
+            width: 50vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1rem;
+            box-shadow: 1px 1px 20px 5px rgb(21, 12, 12);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            text-shadow: 5px 5px 1px rgb(242, 233, 233);
+            margin-bottom: 20px;
+        }
+
+        #question-paper {
+            padding: 1rem;
+            width: 90%;
+            border-radius: .6rem;
+            border: 1px solid #ccc;
+        }
+
+        .input-group {
+            padding: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            border: 9px solid #ccc;
+            margin-right: 10px;
+            width: 95%;
+            color: black;
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid #0b0909;
+            border-radius: 0.6rem;
+        }
+
+        #btn {
+            width: fit-content;
+            height: 3rem;
+            padding: 15px;
+            background-color: #d3dbda;
+            color: rgb(8, 6, 6);
+            font-size: 17px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+            font-weight: 700;
+        }
+
+        #btn:hover {
+            border: 1px red solid;
+            background-color: white;
+            color: #042a26;
+            transform: scale(1.1);
+            font-weight: 700;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content:space-evenly;
+            gap: 1rem;
+        }
+        .btn{
+            text-decoration: none;
+            border: 1px solid red;
+            width: fit-content;
+            height: 3rem;
+            padding: 2px 15px;
+            padding-bottom: 0px;
+            background-color: #d3dbda;
+            color: rgb(8, 6, 6);
+            font-size: 17px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+            font-weight: 700;
+        }
+        .btn:hover {
+            border: 1px red solid;
+            background-color: white;
+            color: #042a26;
+            transform: scale(1.1);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-box" id="question-box">
+        <h2>Create Question Paper</h2>
+        <form id="question-form" action="/generate" method="POST">
+            <div class="input-group">
+                <input type="text" placeholder="Course Name" id="course-name" name="course-name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="course-code" placeholder="Course Code" name="course-code" required>
+            </div>
+            <div class="input-group">
+                <textarea id="question-paper" placeholder="Question Paper" name="question-paper" rows="10"
+                    required></textarea>
+            </div>
+            <div class="btn-group">
+                <button id="btn" type="submit">Create</button>
+                <a class="btn" href="/"><p>Log Out</p></a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

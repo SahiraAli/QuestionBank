@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    /* border:3px solid red; */
+    width: 100%;
+    height: 100vh;
+    background-image: url("./background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.container {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgb(247, 247, 247);
+    margin-top: 40px;
+    width: 30%;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0);
+}
+
+.header {
+    /* border: 4px red solid; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-top: 15px;
+}
+
+.text {
+
+    color: #0e0f10;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.underline {
+    width: 81px;
+    height: 6px;
+    background: #0f0b0f;
+    border-radius: 9px;
+}
+
+.inputs {
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    /* border: 3px black solid; */
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 380px;
+    height: 55px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px black solid;
+}
+
+.input input {
+
+    height: 30px;
+    width: 300px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    /* border: 3px red solid; */
+    color: #d8d2d2;
+    font-size: 19px;
+    color: #171117;
+    font-weight: 600;
+}
+
+.input input {
+    color: black;
+}
+
+.input i {
+    /* border: 2px black solid; */
+    width: 40px;
+    font-size: 25px;
+    align-self: center;
+    align-items: center;
+    margin: 0px 20px;
+    transition: 1s;
+}
+
+.icon:hover {
+    color: rgb(94, 7, 7);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.forgot-password {
+    margin-top: 17px;
+    color: #130a0a;
+    font-size: 20px;
+    margin: auto;
+}
+
+
+
+.forgot-password span {
+    font-size: 20px;
+    color: rgb(14, 13, 13);
+    cursor: pointer;
+}
+
+.submit-container {
+    display: grid;
+    gap: 10px;
+    margin: auto;
+}
+
+.submit {
+    border: 2px rgb(20, 15, 15) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 40px;
+    color: #0f0e10;
+    background-color: #f2f3ef;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 2s ease;
+}
+
+.submit-container p {
+    /* border: 1px solid red; */
+    color: rgb(9, 9, 9);
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto;
+
+}
+
+.submit-container p a {
+    text-decoration: underline;
+}
+
+.gray {
+    color: #0e0f04;
+    background-color: #fff;
+}
+
+@media screen and (max-width:1300px) {
+    .container {
+        /* border: 2px red solid; */
+        width: 60%;
+        margin-top: 5vh;
+    }
+
+}
+
+@media screen and (max-width:756px) {
+    .container {
+        width: 87vh;
+        /* border: 2px red solid; */
+        margin-top: 10vh;
+
+    }
+
+    .inputs {
+        /* border: 2px solid black; */
+        width: 85%;
+    }
+
+    .input {
+        /* border: 4px blueviolet solid; */
+        width: 26rem;
+        height: 50px;
+    }
+
+    .input i {
+        margin-left: 10px;
+        font-size: 20px;
+        /* color: rgb(1, 10, 10); */
+    }
+
+
+    .submit-container {
+        /* border: 3px rgb(35, 6, 6) solid; */
+        width: 27rem;
+    }
+
+    .submit {
+        /* border: 3px blue solid; */
+        width: 26rem;
+        margin: auto;
+
+        font-size: 17px;
+    }
+
+    .forgot-password {
+        font-size: 17px;
+    }
+
+}
+
+
+@media screen and (max-width:640px) {
+    .container {
+        width: 70%;
+        /* border: 2px red solid; */
+
+        margin-top: 10vh;
+
+    }
+
+    .inputs {
+        /* border: 2px solid black; */
+        /* margin: auto; */
+        width: 87%;
+    }
+
+    .input {
+        height: 50px;
+        width: 20rem;
+    }
+
+    .input i {
+        margin-left: 7px;
+        font-size: 16px;
+        /* color: rgb(1, 10, 10); */
+    }
+
+    .submit-container {
+        /* border: 3px rgb(35, 6, 6) solid; */
+        width: 20.5rem;
+    }
+
+    .submit {
+        /* border: 3px blue solid; */
+        width: 20rem;
+        height: 50px;
+        margin: auto;
+        font-size: 18px;
+    }
+
+
+}
+
+@media screen and (max-width:536px) {
+    .container {
+        width: 90%;
+        /* border: 2px red solid; */
+        margin-top: 10vh;
+        height: 60vh
+    }
+
+    .inputs {
+        /* border: 2px solid black; */
+        width: 87%;
+    }
+
+    .input {
+        height: 50px;
+    }
+
+    .input i {
+        font-size: 16px;
+        /* color: rgb(18, 2, 29); */
+    }
+
+    .submit-container {
+        /* border: 3px rgb(35, 6, 6) solid; */
+        width: 20rem;
+    }
+
+    .submit {
+        /* border: 3px blue solid; */
+        width: 19rem;
+        margin: 0 auto;
+        height: 3rem;
+        font-size: 19px;
+    }
+
+
+}
+
+@media screen and (max-width:428px) {
+    .container {
+        width: 90%;
+        /* border: 2px red solid; */
+        margin-top: 6vh;
+        height: 75vh
+    }
+
+    .inputs {
+        /* border: 2px solid black; */
+        width: 90%;
+    }
+
+    .input {
+        height: 50px;
+        width: 19rem;
+    }
+
+    .input i {
+        font-size: 10px;
+        /* color: rgb(18, 2, 29); */
+    }
+
+
+    .submit-container {
+        /* border: 3px rgb(35, 6, 6) solid; */
+        width: 20rem;
+    }
+
+    .submit {
+        /* border: 3px blue solid; */
+        width: 19rem;
+        height: 2.8rem;
+        font-size: 19px;
+    }
+
+
+}
