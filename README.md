@@ -1,2 +1,2 @@
 # QuestionBank
-A webapp to create question paper in PDF format from question bank manually
+Please check out the master branch for the files uploaded so far
